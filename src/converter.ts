@@ -1,5 +1,5 @@
 export class Converter {
-    convert(): string {
-        return '';
-    }
+  convert(): string {
+    return '';
+  }
 }
