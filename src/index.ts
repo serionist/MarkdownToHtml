@@ -1,4 +1,4 @@
 import { Converter } from './converter';
-export const MarkdownConverter: (name: string) => string = (name: string) => '';
+import { ConverterOptions } from './converter.options';
 
-export { Converter };
+export { Converter, ConverterOptions };
