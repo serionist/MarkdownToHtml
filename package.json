@@ -6,14 +6,15 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
-    "build": "tsc",
+    "build": "tsc && npm run copy-files",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
     "prepublishOnly": "npm run build && npm test && npm run lint",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "copy-files": "copyfiles -u 1 src/**/*.html src/**/*.css lib/"
   },
   "files": [
     "lib/**/*"
@@ -31,8 +32,10 @@
   ],
   "devDependencies": {
     "@types/jest": "^28.1.2",
+    "copyfiles": "^2.4.1",
     "jest": "^28.1.1",
     "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
     "ts-jest": "^28.0.5",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
