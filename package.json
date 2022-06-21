@@ -1,5 +1,5 @@
 {
-  "name": "markdown-convert-html",
+  "name": "markdownconverthtml",
   "version": "0.0.2",
   "description": "Converts Markdown to HTML",
   "main": "lib/index.js",
