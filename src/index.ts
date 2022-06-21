@@ -1,1 +1,1 @@
-export const Greeter = (name: string) => `Hello ${name}`; 
+export const MarkdownConverter: (name: string) => string = (name: string) => '';

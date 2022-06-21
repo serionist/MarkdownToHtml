@@ -1,25 +1,39 @@
 {
-  "name": "md-to-html",
-  "version": "1.0.0",
+  "name": "markdown-convert-html",
+  "version": "0.0.1",
   "description": "Converts Markdown to HTML",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --config jestconfig.json",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build && npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
-  "files": ["lib/**/*"],
+  "files": [
+    "lib/**/*"
+  ],
   "author": "Soma Osvay",
   "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/serionist/MarkdownToHtml"
   },
-  "keywords": ["Markdown", "HTML", "Converter"],
+  "keywords": [
+    "Markdown",
+    "HTML",
+    "Converter"
+  ],
   "devDependencies": {
+    "@types/jest": "^28.1.2",
+    "jest": "^28.1.1",
     "prettier": "^2.7.1",
+    "ts-jest": "^28.0.5",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.7.4"
